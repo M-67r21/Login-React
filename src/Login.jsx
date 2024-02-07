@@ -9,11 +9,6 @@ function App() {
       .string()
       .required("Username is required")
       .max(10, "Username cannot be more than 10 characters"),
-    phonenumber: yup
-      .string()
-      .required("Phone Number is required")
-      .max(10, "Phone Number cannot be more than 10 characters"),
-      // .matches(/^(?=.*\d){10,}$/, "Enter valid phone number"),
     email: yup.string().email().required("Email is required"),
     password: yup
       .string()
@@ -52,15 +47,7 @@ function App() {
           />
           <p>{errors.username?.message}</p>
         </>
-        <>
-          <input
-            type="number"
-            name=""
-            placeholder="Enter PhoneNumber"
-            {...register("phonenumber")}
-          />
-          <p>{errors.phonenumber?.message}</p>
-        </>
+       
         <>
           <input type="text" placeholder="Email..." {...register("email")} />
           <p>{errors.email?.message}</p>
